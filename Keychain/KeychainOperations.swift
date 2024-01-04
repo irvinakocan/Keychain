@@ -17,10 +17,12 @@ class KeychainOperations: NSObject {
      */
     static func add(value: Data, account: String) throws {
         let status = SecItemAdd([
+            // indicating that it’s a generic password or a sensible data.
             kSecClass: kSecClassGenericPassword,
             kSecAttrAccount: account,
             kSecAttrService: service,
-            // Allow background acess:
+            // allowing background access:
+            // telling the compiler this data will be available always as posible
             kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock,
             kSecValueData: value] as NSDictionary, nil)
         guard status == errSecSuccess else {

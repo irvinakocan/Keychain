@@ -9,6 +9,24 @@ import Foundation
 
 class KeychainOperations: NSObject {
     
+    // Checking if an item exists in the keychain
+    static func exists(account: String) throws -> Bool {
+        let status = SecItemCopyMatching([
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: account,
+            kSecAttrService: service,
+            kSecReturnData: false] as NSDictionary, nil)
+        
+        switch status {
+        case errSecSuccess:
+            return true
+        case errSecItemNotFound:
+            return false
+        default:
+            throw KeychainError.KeychainCreatingError
+        }
+    }
+    
     /*
      Adding an item to the Keychain
      Parameters:

@@ -8,8 +8,9 @@
 import Foundation
 
 // Name of our service
-let service = "MyKeychainService"
+let service = "MyPasswordsKeychainService"
 
 enum Errors: Error {
     case KeychainCreatingError
+    case operationError
 }

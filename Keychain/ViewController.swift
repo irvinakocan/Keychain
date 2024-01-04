@@ -12,8 +12,45 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // Testing our Keychain Wrapper
+        
+        // Setting Data
+        do {
+            guard let password = "Hillary1249ex".data(using: .utf8) else {
+                return
+            }
+            try KeychainWrapper.set(value: password, account: "password")
+            print("You successfully put your password to the Keychain. \n")
+        }
+        catch {
+            print(error)
+        }
+        
+        // Update Data
+        do {
+            guard let newPassword = "holla23amigos".data(using: .utf8) else {
+                return
+            }
+            try KeychainWrapper.set(value: newPassword, account: "password")
+            print("You successfully updated your password in the Keychain. \n")
+        }
+        catch {
+            print(error)
+        }
+        
+        // Get Data
+        do {
+            guard let passwordData = try KeychainWrapper.get(account: "password"),
+                  let password = String(data: passwordData, encoding: .utf8) else {
+                return
+            }
+            print("Your set password in the Keychain is: \(password). \n")
+        }
+        catch {
+            print(error)
+        }
+        
     }
-
-
 }
 

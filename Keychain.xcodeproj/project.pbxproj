@@ -14,6 +14,7 @@
 		249C60F82B4704040036CFCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 249C60F72B4704040036CFCD /* Assets.xcassets */; };
 		249C60FB2B4704040036CFCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 249C60F92B4704040036CFCD /* LaunchScreen.storyboard */; };
 		249C61032B4708DB0036CFCD /* KeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249C61022B4708DB0036CFCD /* KeychainConstants.swift */; };
+		249C61052B470C490036CFCD /* KeychainOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249C61042B470C490036CFCD /* KeychainOperations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		249C60FA2B4704040036CFCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		249C60FC2B4704040036CFCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		249C61022B4708DB0036CFCD /* KeychainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainConstants.swift; sourceTree = "<group>"; };
+		249C61042B470C490036CFCD /* KeychainOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainOperations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				249C60EE2B4703FA0036CFCD /* AppDelegate.swift */,
 				249C60F02B4703FA0036CFCD /* SceneDelegate.swift */,
 				249C61022B4708DB0036CFCD /* KeychainConstants.swift */,
+				249C61042B470C490036CFCD /* KeychainOperations.swift */,
 				249C60F22B4703FA0036CFCD /* ViewController.swift */,
 				249C60F42B4703FA0036CFCD /* Main.storyboard */,
 				249C60F72B4704040036CFCD /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 				249C60EF2B4703FA0036CFCD /* AppDelegate.swift in Sources */,
 				249C60F12B4703FA0036CFCD /* SceneDelegate.swift in Sources */,
 				249C61032B4708DB0036CFCD /* KeychainConstants.swift in Sources */,
+				249C61052B470C490036CFCD /* KeychainOperations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

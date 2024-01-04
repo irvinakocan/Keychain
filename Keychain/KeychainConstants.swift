@@ -10,7 +10,7 @@ import Foundation
 // Name of our service
 let service = "MyPasswordsKeychainService"
 
-enum Errors: Error {
+enum KeychainError: Error {
     case KeychainCreatingError
     case OperationError
 }

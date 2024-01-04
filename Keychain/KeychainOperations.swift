@@ -26,7 +26,18 @@ class KeychainOperations: NSObject {
             kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock,
             kSecValueData: value] as NSDictionary, nil)
         guard status == errSecSuccess else {
-            throw Errors.OperationError
+            throw KeychainError.OperationError
+        }
+    }
+    
+    static func update(value: Data, account: String) throws {
+        let status = SecItemUpdate([
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: account,
+            kSecAttrService: service] as NSDictionary, [
+                kSecValueData: value] as NSDictionary)
+        guard status == errSecSuccess else {
+            throw KeychainError.OperationError
         }
     }
 }

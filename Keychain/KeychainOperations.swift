@@ -40,4 +40,25 @@ class KeychainOperations: NSObject {
             throw KeychainError.OperationError
         }
     }
+    
+    // Retreiving an item's value from the keychain
+    static func retreive(account: String) throws -> Data? {
+        var result: AnyObject?
+        
+        let status = SecItemCopyMatching([
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: account,
+            kSecAttrService: service,
+            kSecReturnData: true
+        ] as NSDictionary, &result)
+        
+        switch status {
+        case errSecSuccess:
+            return result as? Data
+        case errSecItemNotFound:
+            return nil
+        default:
+            throw KeychainError.OperationError
+        }
+    }
 }

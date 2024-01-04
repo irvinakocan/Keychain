@@ -43,6 +43,7 @@ class KeychainOperations: NSObject {
             // telling the compiler this data will be available always as posible
             kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock,
             kSecValueData: value] as NSDictionary, nil)
+        
         guard status == errSecSuccess else {
             throw KeychainError.OperationError
         }
@@ -54,6 +55,7 @@ class KeychainOperations: NSObject {
             kSecAttrAccount: account,
             kSecAttrService: service] as NSDictionary, [
                 kSecValueData: value] as NSDictionary)
+        
         guard status == errSecSuccess else {
             throw KeychainError.OperationError
         }
@@ -76,6 +78,17 @@ class KeychainOperations: NSObject {
         case errSecItemNotFound:
             return nil
         default:
+            throw KeychainError.OperationError
+        }
+    }
+    
+    static func delete(account: String) throws {
+        let status = SecItemDelete([
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: account,
+            kSecAttrService: service] as NSDictionary)
+        
+        guard status == errSecSuccess else {
             throw KeychainError.OperationError
         }
     }

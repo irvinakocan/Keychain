@@ -27,4 +27,13 @@ class KeychainWrapper {
             throw KeychainError.OperationError
         }
     }
+    
+    static func delete(account: String) throws {
+        if try KeychainOperations.exists(account: account) {
+            try KeychainOperations.delete(account: account)
+        }
+        else {
+            throw KeychainError.OperationError
+        }
+    }
 }

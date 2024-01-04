@@ -51,6 +51,15 @@ class ViewController: UIViewController {
             print(error)
         }
         
+        // Delete Data
+        do {
+            try KeychainWrapper.delete(account: "password")
+            print("You successfully deleted your password from the Keychain.")
+        }
+        catch {
+            print(error)
+        }
+        
     }
 }
 

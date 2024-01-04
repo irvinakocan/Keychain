@@ -24,7 +24,7 @@ class KeychainOperations: NSObject {
             kSecAttrAccessible: kSecAttrAccessibleAfterFirstUnlock,
             kSecValueData: value] as NSDictionary, nil)
         guard status == errSecSuccess else {
-            throw Errors.operationError
+            throw Errors.OperationError
         }
     }
 }

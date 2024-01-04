@@ -12,5 +12,5 @@ let service = "MyPasswordsKeychainService"
 
 enum Errors: Error {
     case KeychainCreatingError
-    case operationError
+    case OperationError
 }

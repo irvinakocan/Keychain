@@ -36,4 +36,8 @@ class KeychainWrapper {
             throw KeychainError.OperationError
         }
     }
+    
+    static func deleteAll() throws {
+        try KeychainOperations.deleteAll()
+    }
 }

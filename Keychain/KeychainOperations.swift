@@ -92,4 +92,14 @@ class KeychainOperations: NSObject {
             throw KeychainError.OperationError
         }
     }
+    
+    // Deleting all items for the app
+    static func deleteAll() throws {
+        let status = SecItemDelete([
+            kSecClass: kSecClassGenericPassword] as NSDictionary)
+        
+        guard status == errSecSuccess else {
+            throw KeychainError.OperationError
+        }
+    }
 }
